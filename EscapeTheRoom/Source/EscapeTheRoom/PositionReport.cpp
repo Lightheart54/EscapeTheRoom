@@ -20,7 +20,10 @@ void UPositionReport::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
+	AActor* pOwner = GetOwner();
+	FString ownerName = pOwner->GetName();
+	
+	UE_LOG(LogTemp, Warning, TEXT("Position Report reporting for duty on %s!"), *ownerName);
 	
 }
 
