@@ -22,8 +22,9 @@ void UPositionReport::BeginPlay()
 
 	AActor* pOwner = GetOwner();
 	FString ownerName = pOwner->GetName();
-	
-	UE_LOG(LogTemp, Warning, TEXT("Position Report reporting for duty on %s!"), *ownerName);
+	FVector actorLocation = pOwner->GetActorLocation();
+	FString objectPos = actorLocation.ToString();
+	UE_LOG(LogTemp, Warning, TEXT("%s is at %s"), *ownerName, *objectPos);
 	
 }
 
